@@ -5,7 +5,6 @@ This application is a website-based application built using PHP (Native) and MyS
 * Indonesia : 
 Aplikasi ini adalah aplikasi berbasis website yang dibangun menggunakan PHP (Native) dan MySQL. Aplikasi ini dapat digunakan untuk pengelolahan gudang dengan metode FIFO (First In, First Out). Jika anda tertarik, silakan email ke mdhiftaa@gmail.com untuk mendapatkan databasenya.
 
-#####################################################
 # English :
 This application has 3 users:
 - Main Admin
