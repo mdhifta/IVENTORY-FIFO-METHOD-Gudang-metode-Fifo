@@ -1,9 +1,9 @@
 # IVENTORY-FIFO-METHOD-Gudang-metode-Fifo-
 * English : 
-This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com to get the database.
+This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com or telegram https://t.me/Enang55 to get the database.
 
 * Indonesia : 
-Aplikasi ini adalah aplikasi berbasis website yang dibangun menggunakan PHP (Native) dan MySQL. Aplikasi ini dapat digunakan untuk pengelolahan gudang dengan metode FIFO (First In, First Out). Jika anda tertarik, silakan email ke mdhiftaa@gmail.com untuk mendapatkan databasenya.
+Aplikasi ini adalah aplikasi berbasis website yang dibangun menggunakan PHP (Native) dan MySQL. Aplikasi ini dapat digunakan untuk pengelolahan gudang dengan metode FIFO (First In, First Out). Jika anda tertarik, silakan email ke mdhiftaa@gmail.com atau telegram https://t.me/Enang55 untuk mendapatkan databasenya.
 
 # English :
 This application has 3 users:
