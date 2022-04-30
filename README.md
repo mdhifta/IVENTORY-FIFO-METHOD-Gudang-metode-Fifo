@@ -1,3 +1,5 @@
+DEMO YOUTUBE : https://youtu.be/QHAlS-EENmA
+
 # IVENTORY-FIFO-METHOD-Gudang-metode-Fifo-
 * English : 
 This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com or telegram https://t.me/Enang55 to get the database.
