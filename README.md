@@ -5,22 +5,21 @@ DEMO YOUTUBE : https://youtu.be/QHAlS-EENmA
 This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com or telegram https://t.me/Enang55 to get the database.
 
 # Payment
-If you want a database, you can give me Rp. 500,000;-(Indonesian Rupiah)/$34 (US Dollar)
-If you give me Rp. 1.500.000;- (Indonesian Rupiah) /$103 (US Dollar) I will provide the following facilities:
-* 3x Revision Changes
+If you want a database, you can give me Rp. 800,000;-(Indonesian Rupiah) on Bank Transfer / $100 (US Dollar) on paypal.
+If you give me Rp. 2.000.000;- (Indonesian Rupiah) on Bank Transfer /$500 (US Dollar) on Paypal, I will provide the following facilities:
+* 2x Revision Changes
 * 1 month warranty
 * Explanation of the application
 
+# Pembayaran 
+Jika anda ingin database, anda bisa memberikan saya Rp. 500.000;-(Rupiah Indonesia) lewat Bank Transfer / $100 (Dollar US) lewat paypal.
+Jika anda memberikan saya Rp. 2.000.000;- (Rupiah Indonesia) lewat Bank Transfer /$500 (Dollar US) lewat paypal. saya akan memberikan fasilitas :
+* 2x Revisi Perubahan
+* Garansi 1 Bulan
+* Penjelasan tentang aplikasi
 
 * Indonesia : 
 Aplikasi ini adalah aplikasi berbasis website yang dibangun menggunakan PHP (Native) dan MySQL. Aplikasi ini dapat digunakan untuk pengelolahan gudang dengan metode FIFO (First In, First Out). Jika anda tertarik, silakan email ke mdhiftaa@gmail.com atau telegram https://t.me/Enang55 untuk mendapatkan databasenya.
-
-# Pembayaran 
-Jika anda ingin database, anda bisa memberikan saya Rp. 500.000;-(Rupiah Indonesia)/$34 (Dollar US)
-Jika anda memberikan saya Rp. 1.500.000;- (Rupiah Indonesia) /$103 (Dollar US) saya akan memberikan fasilitas :
-* 3x Revisi Perubahan
-* Garansi 1 Bulan
-* Penjelasan tentang aplikasi
 
 # English :
 This application has 3 users:
