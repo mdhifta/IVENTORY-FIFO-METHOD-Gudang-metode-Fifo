@@ -12,7 +12,7 @@ If you give me Rp. 2.000.000;- (Indonesian Rupiah) on Bank Transfer /$500 (US Do
 * Explanation of the application
 
 # Pembayaran 
-Jika anda ingin database, anda bisa memberikan saya Rp. 500.000;-(Rupiah Indonesia) lewat Bank Transfer / $100 (Dollar US) lewat paypal.
+Jika anda ingin database, anda bisa memberikan saya Rp. 800.000;-(Rupiah Indonesia) lewat Bank Transfer / $100 (Dollar US) lewat paypal.
 Jika anda memberikan saya Rp. 2.000.000;- (Rupiah Indonesia) lewat Bank Transfer /$500 (Dollar US) lewat paypal. saya akan memberikan fasilitas :
 * 2x Revisi Perubahan
 * Garansi 1 Bulan
