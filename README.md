@@ -9,12 +9,12 @@ Link Demo Apps : https://www.digisoft.id/fifo
 
 Account Demo Apps:
 * Admin
-username : admin
-Password : digisoft123
+- username : admin
+- Password : digisoft123
 
 * Kariyawan
-username : kariyawan
-password : digisoft123
+- username : kariyawan
+- password : digisoft123
 
 # English :
 This application has 3 users:
