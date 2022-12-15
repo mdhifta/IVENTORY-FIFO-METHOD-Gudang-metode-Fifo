@@ -8,11 +8,11 @@ If you want a database, you can make any donations or contributions by submittin
 Link Demo Apps : https://www.digisoft.id/fifo 
 
 Account Demo Apps:
-* Admin
+Admin
 - username : admin
 - Password : digisoft123
 
-* Kariyawan
+Kariyawan
 - username : kariyawan
 - password : digisoft123
 
