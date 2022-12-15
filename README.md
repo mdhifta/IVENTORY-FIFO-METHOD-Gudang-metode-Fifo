@@ -5,6 +5,17 @@ This application is a website-based application built using PHP (Native) and MyS
 # Donations
 If you want a database, you can make any donations or contributions by submitting an application to the contact listed.
 
+Link Demo Apps : https://www.digisoft.id/fifo 
+
+Account Demo Apps:
+* Admin
+username : admin
+Password : digisoft123
+
+* Kariyawan
+username : kariyawan
+password : digisoft123
+
 # English :
 This application has 3 users:
 - Main Admin
