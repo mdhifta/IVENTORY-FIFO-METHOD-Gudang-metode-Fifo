@@ -47,10 +47,6 @@ if($user_true!=0 || $admin_true!=0){
     // $mail->addAddress($obj->email;,);               // Name is optional
     $mail->addReplyTo('your_mail', 'Information');
 
-    // // Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Verify Mail';
@@ -65,7 +61,7 @@ if($user_true!=0 || $admin_true!=0){
 
     $mail->send();
     echo 'Message has been sent';
-    header("location:../../sukses.php");
+    header("location:../../alertemail.php");
   } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
   }

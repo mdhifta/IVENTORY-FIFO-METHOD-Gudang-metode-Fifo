@@ -6,15 +6,13 @@ if(@$_SESSION['id_admin'] != ''){
 } elseif (@$_SESSION['id_kariyawan'] != '') {
   header("Location:kariyawan/dashboard.php");
 }
-
-$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Password Admin</title>
+    <title>Sukses</title>
 
     <?php include("css.php"); ?>
 </head>
@@ -23,8 +21,8 @@ $id = $_GET['id'];
     <!-- Navbar -->
     <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="../index.php">
-                <img src="../vendor/images/white.png">
+            <a class="navbar-brand" href="index.php">
+                <img src="vendor/images/white.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
                 aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +56,11 @@ $id = $_GET['id'];
             <div class="container">
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
-                        <!-- kosong -->
+                        <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+                            <?php if (isset($_GET['id'])): ?>
+                            <h1 class="text-white">Username atau Password Salah!</h1>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,32 +73,13 @@ $id = $_GET['id'];
                     <div class="card bg-secondary border-0 mb-0">
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <small>UBAH PASSWORD</small>
+                                <small>SUKSES MENGIRIM EMAIL! TOLONG CEK EMAIL ANDA</small>
                             </div>
-                            <form role="form" action="../backend/lupa_password/ubah_passwordadmin.php" method="post">
-                                <div class="form-group mb-3">
-                                    <div class="input-group input-group-merge input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Password" type="password"
-                                            name="password1">
-                                    </div>
-                                </div>
-                                <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
-                                <div class="form-group">
-                                    <div class="input-group input-group-merge input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Verify Password" type="password"
-                                            name="password2">
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-primary my-4">Ubah Password</button>
-                                </div>
-                            </form>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="index.php" class="text-light"><small>Login?</small></a>
                         </div>
                     </div>
                 </div>

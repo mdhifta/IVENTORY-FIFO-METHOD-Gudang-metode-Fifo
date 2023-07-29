@@ -19,9 +19,6 @@ if (isset($_POST['id_barang'])) {
       $banyak_barang = $_POST['jumlah'];
       $row = null;
     }
-    // echo "ID TAMPUNG: ".$id_tmp;
-    // echo "<br>";
-    // echo "ID BARANG : ".$id_barang;
   }
 } else {
   $id_barang = $_GET['id'];
@@ -45,23 +42,9 @@ if(@$_SESSION['jumlah'][$row]>=$data->jumlah){
     } elseif($tmpJumlah<=$data->jumlah) {
       $_SESSION['jumlah'][$row]+= $banyak_barang;
       echo "<script>location='../add-penjualan.php';</script>";
-      // echo "disini";
-      // echo "<br>";
-      // echo "Jumlah : ".$data->jumlah;
-      // echo "<br>";
-      // echo "Jumlah Total : ".$tmpJumlah;
-      // echo "<br>";
-      // echo "Banyak Jumlah : ".$banyak_barang;
     } else {
       $_SESSION['jumlah'][$row]+= 1;
       echo "<script>location='../add-penjualan.php';</script>";
-      // echo "disini 2";
-      // echo "<br>";
-      // echo "Jumlah : ".$data->jumlah;
-      // echo "<br>";
-      // echo "Jumlah Total : ".$tmpJumlah;
-      // echo "<br>";
-      // echo "Banyak Jumlah : ".$banyak_barang;
     }
   }
   // selain itu (belum ada di keranjang), maka produk itu dianggap dibeli 1

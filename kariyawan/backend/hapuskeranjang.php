@@ -2,8 +2,6 @@
 session_start();
 
 $row = $_GET['id'];
-// unset($_SESSION['keranjang'][$id_produk]);
-
 $_SESSION['jumlah'][$row]--;
 
 if($_SESSION['jumlah'][$row] == 0){

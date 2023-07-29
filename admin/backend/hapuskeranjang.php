@@ -2,7 +2,6 @@
 session_start();
 
 $num_array = $_GET['id'];
-// unset($_SESSION['keranjang'][$id_produk]);
 
 $_SESSION['jumlah'][$num_array]--;
 

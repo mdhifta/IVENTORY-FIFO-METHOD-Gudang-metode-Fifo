@@ -5,8 +5,6 @@ $id_kariyawan = $_SESSION['id_kariyawan'];
 include("../../database/config.php");
 
 #data post
-// $id_barang = $_POST['id_barang'];
-// $jumlah = $_POST['jumlah'];
 $data_id = array();
 $i = 0;
 
@@ -101,26 +99,28 @@ foreach ($_SESSION['id_barang'] as $row => $id_barang) {
 <title>Struk</title>
 <img src="../../vendor/images/favicon.png" alt="" style="width:100px;margin-left:5%;">
 
-<h1 style="float:right;margin-right:30%;">STRUK PEMBAYARAN & PEMBELIAN TOKO IDA<br> Jl. Raya Tegal Miring<br><p>Pembelian pada tanggal/Jam <?= date('d-M-Y / h:i A') ?></p></h1>
+<h1 style="float:right;margin-right:30%;">STRUK PEMBAYARAN & PEMBELIAN TOKO IDA<br> Jl. Raya Tegal Miring<br>
+    <p>Pembelian pada tanggal/Jam <?= date('d-M-Y / h:i A') ?></p>
+</h1>
 
 <!-- jarak -->
 <table id="example2" class="table table-bordered table-hover" style="margin-top:2%;border:none;">
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama Produk</th>
-      <th>Banyak Barang</th>
-      <th>Harga Satuan</th>
-      <th>Total Harga</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama Produk</th>
+            <th>Banyak Barang</th>
+            <th>Harga Satuan</th>
+            <th>Total Harga</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
     $no=1;
     $tot = 0;
     ?>
-    <?php if (isset($_SESSION['id_barang'])): ?>
-      <?php foreach($_SESSION['id_barang'] as $row => $id_barang): ?>
+        <?php if (isset($_SESSION['id_barang'])): ?>
+        <?php foreach($_SESSION['id_barang'] as $row => $id_barang): ?>
 
         <!-- Menampilkan produk yang sedang duperulangkan berdasarkan id_produk -->
         <?php
@@ -130,27 +130,27 @@ foreach ($_SESSION['id_barang'] as $row => $id_barang) {
         $subharga = $_SESSION['harga'][$row] * $_SESSION['jumlah'][$row];
         ?>
         <tr>
-          <td><?= $no++; ?></td>
-          <td><?= $tmp->nama_brg; ?></td>
-          <td><?= $_SESSION['jumlah'][$row]; ?>
-          </td>
-          <td>Rp. <?= number_format($_SESSION['harga'][$row]); ?>,-</td>
-          <td>Rp. <?= number_format($subharga); ?>,-</td>
+            <td><?= $no++; ?></td>
+            <td><?= $tmp->nama_brg; ?></td>
+            <td><?= $_SESSION['jumlah'][$row]; ?>
+            </td>
+            <td>Rp. <?= number_format($_SESSION['harga'][$row]); ?>,-</td>
+            <td>Rp. <?= number_format($subharga); ?>,-</td>
         </tr>
         <?php $tot = $tot+$subharga ?>
-      <?php endforeach; ?>
-    <?php endif; ?>
-  </tbody>
-  <tbody>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><b>TOTAL: </b></td>
-    <td><b>Rp. <?= number_format($tot); ?></b></td>
-  </tbody>
+        <?php endforeach; ?>
+        <?php endif; ?>
+    </tbody>
+    <tbody>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>TOTAL: </b></td>
+        <td><b>Rp. <?= number_format($tot); ?></b></td>
+    </tbody>
 </table>
 <script type="text/javascript">
-  window.print();
+window.print();
 </script>
 
 <?php
@@ -158,7 +158,6 @@ if ($cek==1) {
   $_SESSION['jumlah'] = array();
   $_SESSION['id_barang'] = array();
   $_SESSION['harga'] = array();
-  // header("Location:../barang-keluar.php");
 } else {
   echo "error move";
 }
