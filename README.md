@@ -13,7 +13,7 @@ Admin
 - username : admin
 - Password : digisoft123
 
-Kariyawan
+Karyawan
 - username : kariyawan
 - password : digisoft123
 
