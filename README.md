@@ -17,6 +17,25 @@ Kariyawan
 - username : kariyawan
 - password : digisoft123
 
+-----------------------------------------------------------------------------------------------------------------------
+Programming Language:
+- PHP
+- Javascript
+
+Frameworks
+- None (Native)
+
+API :
+- None
+
+Available features:
+- FIFO
+- Item in/out
+- casier
+- supplier
+- report, analysis and others.
+
+
 # English :
 This application has 3 users:
 - Main Admin
