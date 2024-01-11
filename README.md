@@ -1,4 +1,7 @@
-# IVENTORY-FIFO-METHOD-Gudang-metode-Fifo-
+# IVENTORY-FIFO-METHOD-Gudang-metode-Fifo
+
+* this is a new feature, there is an item shelf available and the expiration date of the item is also added when interacting with the incoming item.
+
 * English : 
 This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com or telegram https://t.me/Enang55 to get the database.
 

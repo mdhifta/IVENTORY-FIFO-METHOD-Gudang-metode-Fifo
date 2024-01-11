@@ -194,6 +194,13 @@
                                                     class="form-control" placeholder="Harga Barang/ (Pcs/Kg)" required>
                                             </div>
                                         </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-first-name">Tanggal Expired</label>
+                                                <input type="date" min="<?= date('Y-m-d'); ?>" id="input-first-name" name="tanggal_exp"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="text-center">
@@ -205,6 +212,7 @@
 
                         <?php if ($_SESSION['id_barang']!=null): ?>
                         <!-- jarak -->
+                        <div class="table-responsive">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -213,6 +221,7 @@
                                     <th>Nama Supplier</th>
                                     <th>Jumlah Barang</th>
                                     <th>Harga Barang</th>
+                                    <th>Tanggal Expired</th>
                                     <th>Total Harga</th>
                                 </tr>
                             </thead>
@@ -242,6 +251,7 @@
                                                 class="fa fa-plus" aria-hidden="true"></i></a>
                                     </td>
                                     <td>Rp. <?= number_format($_SESSION['harga'][$num_array]); ?>,-</td>
+                                    <td><?= date("d F Y", strtotime($_SESSION['tanggal_exp'][$num_array])); ?></td>
                                     <td>Rp.
                                         <?= number_format($_SESSION['harga'][$num_array]*$_SESSION['jumlah'][$num_array]); ?>,-
                                     </td>
@@ -250,6 +260,7 @@
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
 
                         <div class="card-footer">
                             <center>

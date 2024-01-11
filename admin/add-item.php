@@ -60,6 +60,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php $queryRak = $mysqli->query("SELECT * FROM tb_rak_barang"); ?>
                         <?php if (isset($id)): ?>
                         <?php
               $query = $mysqli->query("SELECT * FROM tb_barang WHERE id_barang='$id'");
@@ -113,8 +114,21 @@
                                                     class="form-control" value="<?= $barang->jumlah; ?>">
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-last-name">Lokasi Penyimpanan</label>
+                                                <select class="form-control" name="id_rak_barang">
+                                                    <?php while ($rak = $queryRak->fetch_object()) { ?>
+                                                        <option <?php if($rak->id_rak_barang === $barang->id_rak_barang){ echo "selected"; } ?> value="<?= $rak->id_rak_barang; ?>"><?= $rak->nama_rak; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <input type="hidden" name="id" value="<?= $barang->id_barang; ?>">
                                 <div class="text-center">
                                     <button class="btn btn-primary my-4">UBAH</button>
@@ -156,6 +170,17 @@
                                             <div class="form-group">
                                                 <input type="hidden" readonly id="input-email" name="jumlah"
                                                     class="form-control" value="0">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-last-name">Lokasi Penyimpanan</label>
+                                                <select class="form-control" name="id_rak_barang">
+                                                    <?php while ($rak = $queryRak->fetch_object()) { ?>
+                                                        <option value="<?= $rak->id_rak_barang; ?>"><?= $rak->nama_rak; ?></option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>

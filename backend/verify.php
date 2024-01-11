@@ -25,6 +25,7 @@ if ($admin==1) {
   $_SESSION['id_barang'] = array();
   $_SESSION['jumlah'] = array();
   $_SESSION['harga'] = array();
+  $_SESSION['tanggal_exp'] = array();
   $admin = 1;
   header('Location:../kariyawan/dashboard.php');
 }

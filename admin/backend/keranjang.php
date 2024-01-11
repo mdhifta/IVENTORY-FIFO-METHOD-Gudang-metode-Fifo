@@ -22,7 +22,8 @@ if ($cek==0) {
   array_push($_SESSION['id_barang'], $_POST['id_barang']);
   array_push($_SESSION['jumlah'], $_POST['jumlah']);
   array_push($_SESSION['harga'], $_POST['harga']);
-  echo "disini";
+  array_push($_SESSION['tanggal_exp'], $_POST['tanggal_exp']);
+
   header("Location:../add-pembelian.php");
 } else {
   header("Location:../add-pembelian.php");

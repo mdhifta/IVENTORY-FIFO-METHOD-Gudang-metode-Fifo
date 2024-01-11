@@ -57,7 +57,7 @@ if ($_SESSION['id_admin'] == '') {
           <li class="nav-item">
             <a class="nav-link" href="master-pembelian.php">
               <i class="ni ni-bullet-list-67 text-blue"></i>
-              <span class="nav-link-text">Transaksi Pembelian</span>
+              <span class="nav-link-text">Pembelian (Barang Masuk)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -76,6 +76,12 @@ if ($_SESSION['id_admin'] == '') {
             <a class="nav-link" href="asset-toko.php">
               <i class="ni ni-book-bookmark text-blue"></i>
               <span class="nav-link-text">Nilai Asset Toko</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rak-barang.php">
+              <i class="ni ni-app text-blue"></i>
+              <span class="nav-link-text">Master Rak Barang</span>
             </a>
           </li>
         </ul>

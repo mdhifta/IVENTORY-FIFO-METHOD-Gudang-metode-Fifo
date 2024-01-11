@@ -69,8 +69,9 @@ foreach ($_SESSION['id_barang'] as $num_array => $id_barang){
   #get data jumlah and harga
   $jumlah = $_SESSION['jumlah'][$num_array];
   $harga = $_SESSION['harga'][$num_array];
+  $exp = $_SESSION['tanggal_exp'][$num_array];
 
-  if($mysqli->query("INSERT INTO tb_barang_msk(id_barang, jumlah_masuk, history, harga, tanggal_masuk) VALUES('$id_barang', $jumlah, '0', $harga, NOW())")) {
+  if($mysqli->query("INSERT INTO tb_barang_msk(id_barang, jumlah_masuk, history, harga, tanggal_masuk, tanggal_exp) VALUES('$id_barang', $jumlah, '0', $harga, NOW(), '$exp')")) {
     $id_barang_msk = $mysqli->insert_id;
     if ($mysqli->query("INSERT INTO tb_pembelian(id_barang_msk, id_supplier, jumlah_beli, tanggal_beli) VALUES('$id_barang_msk', $id_supplier, $jumlah, NOW())")) {
       if ($mysqli->query("UPDATE tb_barang SET jumlah=jumlah+$jumlah WHERE id_barang=$id_barang")) {
@@ -78,6 +79,7 @@ foreach ($_SESSION['id_barang'] as $num_array => $id_barang){
         unset($_SESSION['id_barang'][$num_array]);
         unset($_SESSION['jumlah'][$num_array]);
         unset($_SESSION['harga'][$num_array]);
+        unset($_SESSION['tanggal_exp'][$num_array]);
       }
     } else {
       echo "gagal memasukan data ke tb_pembelian";

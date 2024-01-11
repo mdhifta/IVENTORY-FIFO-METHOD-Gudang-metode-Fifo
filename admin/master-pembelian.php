@@ -67,10 +67,11 @@
                                     <tr>
                                         <td width="5%"><strong>Nama Barang</strong></td>
                                         <td width="20%"><strong>Jumlah</strong></td>
-                                        <td width="20%"><strong>Telah Keluar</strong></td>
+                                        <td width="20%"><strong>Di Keluarkan</strong></td>
                                         <td width="20%"><strong>Supplier</strong></td>
                                         <td width="20%"><strong>Harga Beli</strong></td>
-                                        <td width="15%"><strong>Tanggal</strong></td>
+                                        <td width="20%"><strong>Expired</strong></td>
+                                        <td width="15%"><strong>Tanggal Masuk</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -85,6 +86,7 @@
                                         <td><?= $barang->history;  ?></td>
                                         <td><?= $barang->nama_supplier;  ?></td>
                                         <td>Rp.<?= number_format($barang->harga); ?>/<?= $barang->satuan; ?></td>
+                                        <td><?= date("d M Y", strtotime($barang->tanggal_exp));  ?></td>
                                         <td><?= date("d M Y", strtotime($barang->tanggal_masuk));  ?></td>
                                     </tr>
                                     <?php } ?>

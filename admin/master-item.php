@@ -59,6 +59,7 @@
                                 <thead>
                                     <tr>
                                         <td width="5%"><strong>Nama Barang</strong></td>
+                                        <td width="5%"><strong>Lokasi</strong></td>
                                         <td width="20%"><strong>Jumlah</strong></td>
                                         <td width="20%"><strong>Harga Jual</strong></td>
                                         <td width="20%"><strong>Harga Beli</strong></td>
@@ -68,10 +69,11 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                  $query = $mysqli->query("SELECT * FROM tb_barang");
+                  $query = $mysqli->query("SELECT tb_barang.*, tb_rak_barang.nama_rak FROM tb_barang JOIN tb_rak_barang ON tb_rak_barang.id_rak_barang=tb_barang.id_rak_barang");
                   while ($barang = $query->fetch_object()) { ?>
                                     <tr>
                                         <td><?= $barang->nama_brg;  ?></td>
+                                        <td><?= $barang->nama_rak;  ?></td>
                                         <td><?= $barang->jumlah;  ?></td>
                                         <td>Rp. <?= number_format($barang->harga_jual); ?>;-</td>
                                         <td>Rp. <?= number_format($barang->harga_beli); ?>;-</td>

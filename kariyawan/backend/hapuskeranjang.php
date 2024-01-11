@@ -8,6 +8,7 @@ if($_SESSION['jumlah'][$row] == 0){
   unset($_SESSION['jumlah'][$row]);
   unset($_SESSION['id_barang'][$row]);
   unset($_SESSION['harga'][$row]);
+  unset($_SESSION['tanggal_exp'][$row]);
 }
 
 header('location:../add-penjualan.php');

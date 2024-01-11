@@ -158,6 +158,7 @@ if ($cek==1) {
   $_SESSION['jumlah'] = array();
   $_SESSION['id_barang'] = array();
   $_SESSION['harga'] = array();
+  $_SESSION['tanggal_exp'] = array();
 } else {
   echo "error move";
 }
