@@ -3,7 +3,7 @@
 This application is a website-based application built using PHP (Native) and MySQL. This application can be used for warehouse management using the FIFO (First In, First Out) method. If you are interested, please email to mdhiftaa@gmail.com, telegram https://t.me/Enang55 or whatsapp https://wa.me/6285791419625 to get the database.
 
 # Donations
-If you want a database, you can make any donations or contributions by submitting an application to the contact listed.
+If you want a database, you can make any donations Rp. 400.000 (confirm with my contact: wa, tele or email) or contributions by submitting an application to the contact listed.
 
 Link Demo Apps : https://www.digisoft.id/fifo 
 
