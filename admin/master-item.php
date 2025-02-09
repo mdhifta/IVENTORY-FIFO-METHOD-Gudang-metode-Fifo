@@ -27,15 +27,15 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Master Barang</li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Master Item</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                            <a href="add-item.php" class="btn btn-sm btn-neutral">Tambah Barang</a>
-                            <a href="../laporan/laporanBarang.php" target="_blank" class="btn btn-sm btn-primary">cetak
-                                Laporan</a>
+                            <a href="add-item.php" class="btn btn-sm btn-neutral">Add Item</a>
+                            <a href="../report/report-item.php" target="_blank" class="btn btn-sm btn-primary">Print
+                                Report</a>
                         </div>
                     </div>
                 </div>
@@ -58,32 +58,32 @@
                             <table id="file" class="table striped">
                                 <thead>
                                     <tr>
-                                        <td width="5%"><strong>Nama Barang</strong></td>
-                                        <td width="20%"><strong>Jumlah</strong></td>
-                                        <td width="20%"><strong>Harga Jual</strong></td>
-                                        <td width="20%"><strong>Harga Beli</strong></td>
-                                        <td width="15%"><strong>Satuan</strong></td>
-                                        <td width="10%"><strong>Aksi</strong></td>
+                                        <td width="5%"><strong>Item Name</strong></td>
+                                        <td width="20%"><strong>Total</strong></td>
+                                        <td width="20%"><strong>Price Selling</strong></td>
+                                        <td width="20%"><strong>Price Purchase</strong></td>
+                                        <td width="15%"><strong>Type</strong></td>
+                                        <td width="10%"><strong>Action</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                  $query = $mysqli->query("SELECT * FROM tb_barang");
-                  while ($barang = $query->fetch_object()) { ?>
-                                    <tr>
-                                        <td><?= $barang->nama_brg;  ?></td>
-                                        <td><?= $barang->jumlah;  ?></td>
-                                        <td>Rp. <?= number_format($barang->harga_jual); ?>;-</td>
-                                        <td>Rp. <?= number_format($barang->harga_beli); ?>;-</td>
-                                        <td><?= $barang->satuan;  ?></td>
-                                        <td>
-                                            <a href="add-item.php?id=<?= $barang->id_barang; ?>"
-                                                class="btn btn-sm btn-info">Ubah</a>
-                                        </td>
-                                        </td>
-                                    </tr>
+                                    $query = $mysqli->query("SELECT * FROM tb_item");
+                                    while ($item = $query->fetch_object()) { ?>
+                                        <tr>
+                                            <td><?= $item->item_name;  ?></td>
+                                            <td><?= $item->quantity;  ?></td>
+                                            <td>Rp. <?= number_format($item->selling_price); ?>;-</td>
+                                            <td>Rp. <?= number_format($item->purchase_price); ?>;-</td>
+                                            <td><?= $item->unit_type;  ?></td>
+                                            <td>
+                                                <a href="add-item.php?id=<?= $item->id; ?>"
+                                                    class="btn btn-sm btn-info">Edit</a>
+                                            </td>
+                                            </td>
+                                        </tr>
                                     <?php
-                } ?>
+                                    } ?>
                                 </tbody>
                             </table>
                             <!-- end table -->

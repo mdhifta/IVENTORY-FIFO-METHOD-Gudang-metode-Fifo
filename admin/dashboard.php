@@ -27,8 +27,8 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Index</li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Home</li>
                                 </ol>
                             </nav>
                         </div>
@@ -41,12 +41,12 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Data Supplier
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Supplier
                                             </h5>
                                             <?php
-                        $query_supplier = $mysqli->query("SELECT id_supplier FROM tb_supplier");
-                        $no_supplier = $query_supplier->num_rows;
-                       ?>
+                                            $query_supplier = $mysqli->query("SELECT id FROM tb_supplier");
+                                            $no_supplier = $query_supplier->num_rows;
+                                            ?>
                                             <span class="h2 font-weight-bold mb-0"><?= $no_supplier; ?> Supplier</span>
                                         </div>
                                         <div class="col-auto">
@@ -65,12 +65,12 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Kariyawan</h5>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Employees</h5>
                                             <?php
-                        $query_user = $mysqli->query("SELECT id_kariyawan FROM tb_kariyawan");
-                        $no_user = $query_user->num_rows;
-                       ?>
-                                            <span class="h2 font-weight-bold mb-0"><?= $no_user; ?> Orang</span>
+                                            $query_employees = $mysqli->query("SELECT id FROM tb_employees");
+                                            $total_employees = $query_employees->num_rows;
+                                            ?>
+                                            <span class="h2 font-weight-bold mb-0"><?= $total_employees; ?> Employees</span>
                                         </div>
                                         <div class="col-auto">
                                             <div
@@ -88,14 +88,14 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Barang keluar
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Out Item
                                             </h5>
                                             <?php
-                        $query_penjualan = $mysqli->query("SELECT id_penjualan FROM tb_penjualan");
-                        $no_penjualan = $query_penjualan->num_rows;
-                       ?>
-                                            <span class="h2 font-weight-bold mb-0"><?= $no_penjualan; ?>
-                                                Transaksi</span>
+                                            $query_selling = $mysqli->query("SELECT id FROM tb_selling");
+                                            $total_selling = $query_selling->num_rows;
+                                            ?>
+                                            <span class="h2 font-weight-bold mb-0"><?= $total_selling; ?>
+                                                Transaction</span>
                                         </div>
                                         <div class="col-auto">
                                             <div
@@ -113,13 +113,13 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Pembelian</h5>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Purchase</h5>
                                             <?php
-                        $query_pembelian = $mysqli->query("SELECT id_pembelian FROM tb_pembelian");
-                        $no_pembelian = $query_pembelian->num_rows;
-                       ?>
-                                            <span class="h2 font-weight-bold mb-0"><?= $no_pembelian; ?>
-                                                Transaksi</span>
+                                            $query_purchase = $mysqli->query("SELECT id FROM tb_selling");
+                                            $total_purchase = $query_purchase->num_rows;
+                                            ?>
+                                            <span class="h2 font-weight-bold mb-0"><?= $total_purchase; ?>
+                                                Transaction</span>
                                         </div>
                                         <div class="col-auto">
                                             <div

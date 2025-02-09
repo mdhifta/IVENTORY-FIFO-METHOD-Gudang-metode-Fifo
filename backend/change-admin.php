@@ -2,17 +2,16 @@
 session_start();
 include("../database/config.php");
 
-$id_admin = $_POST['id'];
-$nama_admin = $_POST['nadmin'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$hak = $_POST['hak'];
+$id = $_POST['id'];
+$name = $_POST['name'];
+$level = $_POST['level'];
 $email = $_POST['email'];
-$telephone = $_POST['telp'];
+$phone = $_POST['phone'];
+$password = $_POST['password'];
+$username = $_POST['username'];
 
-if ($mysqli->query("UPDATE tb_admin SET nama_admin='$nama_admin', no_handphone='$telephone', username='$username', password='$password', email='$email', level='$hak' WHERE id_admin='$id_admin'")) {
+if ($mysqli->query("UPDATE tb_admin SET name='$name', phone='$phone', username='$username', password='$password', email='$email', level='$level' WHERE id='$id'")) {
   header("Location:../admin/master-admin.php");
 } else {
   echo "gagal update";
 }
-?>

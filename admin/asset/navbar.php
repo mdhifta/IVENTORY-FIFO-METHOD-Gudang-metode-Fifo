@@ -24,7 +24,7 @@
                         aria-expanded="false">
                         <div class="media align-items-center">
                             <div class="media-body  ml-2  d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold">Hallo, <?= $admin->nama_admin; ?></span>
+                                <span class="mb-0 text-sm  font-weight-bold">Hallo, <?= $admin->name; ?></span>
                             </div>
                         </div>
                     </a>
@@ -32,7 +32,7 @@
                         <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
-                        <a href="myprofil.php" class="dropdown-item">
+                        <a href="my-profil.php" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
                             <span>My profile</span>
                         </a>

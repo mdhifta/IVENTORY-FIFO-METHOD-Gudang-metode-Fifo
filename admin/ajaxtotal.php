@@ -2,18 +2,17 @@
 session_start();
 include '../database/config.php';
 
-if($_POST['id']){
-  $id=$_POST['id'];
-  if($id==0){
-    echo "Tidak ada harga";
-  }else{
-    $id_barang_msk = $_SESSION['id_barang_msk'];
+if ($_POST['id']) {
+  $id = $_POST['id'];
+  if ($id == 0) {
+    echo "Nothing set Price";
+  } else {
+    $item_in_id = $_SESSION['item_in_id'];
 
-    $query = $mysqli->query("SELECT harga FROM tb_pembelian WHERE id_barang_msk='$id_barang_msk'");
-    $harga = $query->fetch_object();
-    $data_harga = $harga->harga+1500;
-    echo '<label class="form-control-label" for="input-first-name">Total Harga : Rp. '.number_format($data_harga*$id).';-</label>';
+    $query = $mysqli->query("SELECT price FROM tb_purchase WHERE item_in_id='$item_in_id'");
+    $price = $query->fetch_object();
+    $price_total = $price->price + 1500;
+    echo '<label class="form-control-label" for="input-first-name">Total Payment : Rp. ' . number_format($price_total * $id) . ';-</label>';
   }
-  $_SESSION['$id_product'] = 0;
+  $_SESSION['item_id'] = 0;
 }
-?>

@@ -28,17 +28,17 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                                     <?php if (isset($id)): ?>
-                                    <li class="breadcrumb-item active" aria-current="page">Ubah Barang</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Edit Item</li>
                                     <?php else: ?>
-                                    <li class="breadcrumb-item active" aria-current="page">Tambah Barang</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Add Item</li>
                                     <?php endif; ?>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                            <a href="master-item.php" class="btn btn-sm btn-neutral">Kembali</a>
+                            <a href="master-item.php" class="btn btn-sm btn-neutral">Back</a>
                         </div>
                     </div>
                 </div>
@@ -53,118 +53,113 @@
                             <div class="row align-items-center">
                                 <div class="col-8">
                                     <?php if (isset($id)): ?>
-                                    <h3 class="mb-0">Ubah Item</h3>
+                                        <h3 class="mb-0">Edit Item</h3>
                                     <?php else: ?>
-                                    <h3 class="mb-0">Tambah Item</h3>
+                                        <h3 class="mb-0">Add Item</h3>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <?php if (isset($id)): ?>
-                        <?php
-              $query = $mysqli->query("SELECT * FROM tb_barang WHERE id_barang='$id'");
-              $barang = $query->fetch_object();
-              ?>
-                        <div class="card-body">
-                            <form action="../backend/change-items.php" method="post">
-                                <h6 class="heading-small text-muted mb-4">Lengkapi Data Dibawah</h6>
-                                <div class="pl-lg-4">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-username">Nama
-                                                    Barang</label>
-                                                <input type="text" id="input-username" name="nbarang"
-                                                    class="form-control" value="<?= $barang->nama_brg; ?>">
+                            <?php
+                            $query = $mysqli->query("SELECT * FROM tb_item WHERE id='$id'");
+                            $item = $query->fetch_object();
+                            ?>
+                            <div class="card-body">
+                                <form action="../backend/change-items.php" method="post">
+                                    <div class="pl-lg-4">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-username">Item Name</label>
+                                                    <input type="text" id="input-username" name="item_name"
+                                                        class="form-control" value="<?= $item->item_name; ?>">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-last-name">Satuan</label>
-                                                <select class="form-control" name="satuan">
-                                                    <?php
-                              if($barang->satuan=="Kg"){
-                                echo '
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-last-name">Unit Type</label>
+                                                    <select class="form-control" name="unit_type">
+                                                        <?php
+                                                        if ($item->unit_type == "Kg") {
+                                                            echo '
                                   <option value="Kg">Kg</option>
                                   <option value="Pcs">Pcs</option>';
-                              } else {
-                                echo '
+                                                        } else {
+                                                            echo '
                                   <option value="Pcs">Pcs</option>
                                   <option value="Kg">Kg</option>';
-                              }
-                             ?>
-                                                </select>
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-first-name">Selling Price</label>
+                                                    <input type="number" readonly id="input-first-name" name="selling_price"
+                                                        class="form-control" value="<?= $item->selling_price; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-email">Quantity</label>
+                                                    <input type="number" readonly id="input-email" name="quantity"
+                                                        class="form-control" value="<?= $item->quantity; ?>">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-first-name">Harga
-                                                    Jual</label>
-                                                <input type="number" readonly id="input-first-name" name="hjual"
-                                                    class="form-control" value="<?= $barang->harga_jual; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-email">Jumlah</label>
-                                                <input type="number" readonly id="input-email" name="jumlah"
-                                                    class="form-control" value="<?= $barang->jumlah; ?>">
-                                            </div>
-                                        </div>
+                                    <input type="hidden" name="id" value="<?= $item->id; ?>">
+                                    <div class="text-center">
+                                        <button class="btn btn-primary my-4">EDIT</button>
                                     </div>
-                                </div>
-                                <input type="hidden" name="id" value="<?= $barang->id_barang; ?>">
-                                <div class="text-center">
-                                    <button class="btn btn-primary my-4">UBAH</button>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
                         <?php else: ?>
-                        <div class="card-body">
-                            <form action="../backend/add-items.php" method="post">
-                                <h6 class="heading-small text-muted mb-4">Lengkapi Data Dibawah</h6>
-                                <div class="pl-lg-4">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-username">Nama
-                                                    Barang</label>
-                                                <input type="text" id="input-username" name="nbarang"
-                                                    class="form-control" placeholder="Nama Barang" required>
+                            <div class="card-body">
+                                <form action="../backend/add-items.php" method="post">
+                                    <div class="pl-lg-4">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-username">Item Name</label>
+                                                    <input type="text" id="input-username" name="item_name"
+                                                        class="form-control" placeholder="Item Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-last-name">Unit Type</label>
+                                                    <select class="form-control" name="unit_type">
+                                                        <option value="Kg">Kg</option>
+                                                        <option value="Pcs">Pcs</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-last-name">Satuan</label>
-                                                <select class="form-control" name="satuan">
-                                                    <option value="Kg">Kg</option>
-                                                    <option value="Pcs">Pcs</option>
-                                                </select>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" readonly id="input-first-name" name="selling_price"
+                                                        class="form-control" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" readonly id="input-email" name="quantity"
+                                                        class="form-control" value="0">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="hidden" readonly id="input-first-name" name="hjual"
-                                                    class="form-control" value="0">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="hidden" readonly id="input-email" name="jumlah"
-                                                    class="form-control" value="0">
-                                            </div>
-                                        </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary my-4">SUBMIT</button>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-primary my-4">TAMBAH</button>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>

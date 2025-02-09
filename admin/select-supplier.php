@@ -1,10 +1,10 @@
-<?php  @$id = $_GET['id']; ?>
+<?php @$id = $_GET['id']; ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Pilih Supplier</title>
+    <title>Select Supplier</title>
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <!-- jQuery -->
@@ -35,13 +35,13 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Pilih Supplier</li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Select Supplier</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                            <a href="master-pembelian.php" class="btn btn-sm btn-neutral">Kembali</a>
+                            <a href="master-purchase.php" class="btn btn-sm btn-neutral">Back</a>
                         </div>
                     </div>
                 </div>
@@ -55,29 +55,27 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">Pilih Supplier</h3>
+                                    <h3 class="mb-0">Select Supplier</h3>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-body">
                             <form action="backend/add-supplier.php" method="post">
-                                <h6 class="heading-small text-muted mb-4">Lengkapi Data Dibawah</h6>
                                 <div class="pl-lg-4">
                                     <div class="row">
 
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="input-username">Nama
-                                                    Supplier</label>
+                                                <label class="form-control-label" for="input-username">Supplier</label>
 
-                                                <select class="form-control" id="select-supplier" name="id_supplier">
+                                                <select class="form-control" id="select-supplier" name="supplier_id">
                                                     <?php
-                          $query = $mysqli->query("SELECT * FROM tb_supplier");
-                          while ($barang = $query->fetch_object()) {
-                            ?>
-                                                    <option value="<?= $barang->id_supplier; ?>">
-                                                        <?= $barang->nama_supplier;  ?></option>
+                                                    $query = $mysqli->query("SELECT * FROM tb_supplier");
+                                                    while ($data = $query->fetch_object()) {
+                                                    ?>
+                                                        <option value="<?= $data->id; ?>">
+                                                            <?= $data->name;  ?></option>
                                                     <?php } ?>
                                                 </select>
 
@@ -87,7 +85,7 @@
 
                                 </div>
                                 <div class="text-center">
-                                    <button class="btn btn-primary my-4">LANJUT</button>
+                                    <button class="btn btn-primary my-4">NEXT</button>
                                 </div>
                             </form>
                         </div>
@@ -100,12 +98,12 @@
     </div>
 
     <script type="text/javascript">
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-        // Initialize select2
-        $("#select-supplier").select2();
+            // Initialize select2
+            $("#select-supplier").select2();
 
-    });
+        });
     </script>
 </body>
 

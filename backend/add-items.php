@@ -1,15 +1,12 @@
 <?php
 include('../database/config.php');
 
-$nama_brg = $_POST['nbarang'];
-$jumlah = $_POST['jumlah'];
-$harga_beli = $_POST['hbeli'];
-$harga_jual = $_POST['hjual'];
-$satuan = $_POST['satuan'];
+$item_name = $_POST['item_name'];
+$quantity = $_POST['quantity'];
+$unit_type = $_POST['unit_type'];
 
-if($mysqli->query("INSERT INTO tb_barang(nama_brg, jumlah, harga_beli, harga_jual, satuan) VALUES('$nama_brg', '$jumlah', '0', '0', '$satuan')")) {
+if ($mysqli->query("INSERT INTO tb_item(item_name, quantity, purchase_price, selling_price, unit_type) VALUES('$item_name', '$quantity', '0', '0', '$unit_type')")) {
   header('Location:../admin/master-item.php');
 } else {
   echo "query error";
 }
-?>

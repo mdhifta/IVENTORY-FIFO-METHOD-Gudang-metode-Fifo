@@ -27,13 +27,13 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Master User</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                            <a href="add-user.php" class="btn btn-sm btn-neutral">Tambah User</a>
+                            <a href="add-user.php" class="btn btn-sm btn-neutral">Add User</a>
                         </div>
                     </div>
                 </div>
@@ -53,34 +53,33 @@
                         </div>
                         <div class="table-responsive">
                             <!-- Projects table -->
-                            <table class="table align-items-center table-flush">
+                            <table class="table align-items-center table-flush table striped" id="file">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">Nama Kariyawan</th>
+                                        <th scope="col">Employee Name</th>
                                         <th scope="col">Username</th>
-                                        <th scope="col">Kontak</th>
+                                        <th scope="col">Phone</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Aksi</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                $data = $mysqli->query("SELECT * FROM tb_kariyawan");
-
-                while ($kariyawan = $data->fetch_object()) {
-                  ?>
-                                    <tr>
-                                        <th scope="row"><?= $kariyawan->nama_kariyawan;  ?></th>
-                                        <td><?= $kariyawan->username; ?></td>
-                                        <td><?= $kariyawan->kontak; ?></td>
-                                        <td><?= $kariyawan->email; ?></td>
-                                        <td>
-                                            <a href="../backend/delete-kariyawan.php?id=<?= $kariyawan->id_kariyawan; ?>"
-                                                class="btn btn-sm btn-danger">Hapus</a>
-                                            <a href="add-user.php?id=<?= $kariyawan->id_kariyawan; ?>"
-                                                class="btn btn-sm btn-info">Ubah</a>
-                                        </td>
-                                    </tr>
+                                    $data = $mysqli->query("SELECT * FROM tb_employees");
+                                    while ($employees = $data->fetch_object()) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row"><?= $employees->name;  ?></th>
+                                            <td><?= $employees->username; ?></td>
+                                            <td><?= $employees->phone; ?></td>
+                                            <td><?= $employees->email; ?></td>
+                                            <td>
+                                                <a href="../backend/delete-employees.php?id=<?= $employees->id; ?>"
+                                                    class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="add-user.php?id=<?= $employees->id; ?>"
+                                                    class="btn btn-sm btn-info">Edit</a>
+                                            </td>
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>

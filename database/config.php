@@ -1,16 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+
 $host = "localhost";
-$username = "your_username";
-$password = "your_password";
-$db_name = "your_db_name";
+$username = "mdhifta";
+$password = "shoera";
+$db_name = "db_en_fifo";
 
 $mysqli = new mysqli($host, $username, $password, $db_name);
 
 function koneksi(){
   if ($mysqli) {
-    echo "Berhasil terkoneksi pada database ".$db_name;
+    echo "Success connect with ".$db_name;
   } else {
-    echo "Gagal Terkoneksi";
+    echo "Failed connnect with ".$db_name;
   }
 }
 

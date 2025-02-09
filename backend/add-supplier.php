@@ -1,11 +1,11 @@
 <?php
 include('../database/config.php');
 
-$nama_supplier = $_POST['nsupplier'];
-$alamat_supplier = $_POST['alamat'];
-$kontak_supplier = $_POST['kontak'];
+$name = $_POST['nsupplier'];
+$address = $_POST['address'];
+$phone = $_POST['phone'];
 
-if($mysqli->query("INSERT INTO tb_supplier(nama_supplier, alamat_supplier, kontak_supplier) VALUES('$nama_supplier', '$alamat_supplier', '$kontak_supplier')")) {
+if($mysqli->query("INSERT INTO tb_supplier(name, address, phone) VALUES('$name', '$address', '$phone')")) {
   header('Location:../admin/supplier.php');
 } else {
   echo "query error";

@@ -27,13 +27,13 @@
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Master Admin</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                            <a href="add-admin.php" class="btn btn-sm btn-neutral">Tambah Admin</a>
+                            <a href="add-admin.php" class="btn btn-sm btn-neutral">Add Admin</a>
                         </div>
                     </div>
                 </div>
@@ -53,42 +53,43 @@
                         </div>
                         <div class="table-responsive">
                             <!-- Projects table -->
-                            <table class="table align-items-center table-flush">
+                            <table class="table align-items-center table-flush table striped" id="file">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">Nama Admin</th>
+                                        <th scope="col">Name</th>
                                         <th scope="col">Username</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Telephone</th>
-                                        <th scope="col">Aksi</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                $data = $mysqli->query("SELECT * FROM tb_admin");
+                                    $admin = $mysqli->query("SELECT * FROM tb_admin WHERE id=" . $_SESSION['admin_id'])->fetch_object();
 
-                while ($akses = $data->fetch_object()) {
-                  ?>
-                                    <tr>
-                                        <th scope="row"><?= $akses->nama_admin; ?></th>
-                                        <td><?= $akses->username; ?></td>
-                                        <td><?= $akses->email; ?></td>
-                                        <td><?= $akses->no_handphone; ?></td>
-                                        <td>
-                                            <?php if ($admin->level==1) {
-                        if ($admin->id_admin==$akses->id_admin) {
-                          echo '<a href="add-admin.php?id='.$akses->id_admin.'" class="btn btn-sm btn-info">Ubah</a>';
-                        } else {
-                          echo '
-                          <a href="add-admin.php?id='.$akses->id_admin.'" class="btn btn-sm btn-info">Ubah</a>
-                          <a href="../backend/delete-admin.php?id='.$akses->id_admin.'" class="btn btn-sm btn-danger">Hapus</a>
+                                    $query = $mysqli->query("SELECT * FROM tb_admin");
+                                    while ($data = $query->fetch_object()) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row"><?= $data->name; ?></th>
+                                            <td><?= $data->username; ?></td>
+                                            <td><?= $data->email; ?></td>
+                                            <td><?= $data->phone; ?></td>
+                                            <td>
+                                                <?php if ($admin->level == '1') {
+                                                    if ($_SESSION['admin_id'] == $data->id) {
+                                                        echo '<a href="add-admin.php?id=' . $data->id . '" class="btn btn-sm btn-info">Edit</a>';
+                                                    } else {
+                                                        echo '
+                          <a href="add-admin.php?id=' . $data->id . '" class="btn btn-sm btn-info">Edit</a>
+                          <a href="../backend/delete-admin.php?id=' . $data->id . '" class="btn btn-sm btn-danger">Delete</a>
                           ';
-                        }
-                      } else {
-                        echo "Akses anda dibatasi";
-                      }?>
-                                        </td>
-                                    </tr>
+                                                    }
+                                                } else {
+                                                    echo "<span class='badge bg-danger text-white'>Limited Access</span>";
+                                                } ?>
+                                            </td>
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>

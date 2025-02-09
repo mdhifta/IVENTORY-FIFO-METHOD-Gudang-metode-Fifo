@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if(@$_SESSION['id_admin'] != ''){
+if(@$_SESSION['admin_id'] != ''){
   header("Location:admin/dashboard.php");
-} elseif (@$_SESSION['id_kariyawan'] != '') {
-  header("Location:kariyawan/dashboard.php");
+} elseif (@$_SESSION['employee_id'] != '') {
+  header("Location:employees/dashboard.php");
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +58,7 @@ if(@$_SESSION['id_admin'] != ''){
                     <div class="row justify-content-center">
                         <div class="col-xl-5 col-lg-6 col-md-8 px-5">
                             <?php if (isset($_GET['id'])): ?>
-                            <h1 class="text-white">Username atau Password Salah!</h1>
+                            <h1 class="text-white">Username or Password Wrong   !</h1>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ if(@$_SESSION['id_admin'] != ''){
                     </div>
                     <div class="row mt-3">
                         <div class="col-6">
-                            <a href="forgetpassword.php" class="text-light"><small>Forgot password?</small></a>
+                            <a href="forget-password.php" class="text-light"><small>Forgot password?</small></a>
                         </div>
                     </div>
                 </div>

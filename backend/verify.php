@@ -5,33 +5,35 @@ include('../database/config.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-#seleksi admin
+# check admin
 $query_admin = $mysqli->query("SELECT * FROM tb_admin WHERE username='$username' AND password='$password'");
 $admin = $query_admin->num_rows;
 
-#seleksi kariyawan
-$query_kariyawan = $mysqli->query("SELECT * FROM tb_kariyawan WHERE username='$username' AND password='$password'");
-$kariyawan = $query_kariyawan->num_rows;
+#check employess
+$query_employees = $mysqli->query("SELECT * FROM tb_employees WHERE username='$username' AND password='$password'");
+$employees = $query_employees->num_rows;
 
-echo $admin;
-if ($admin==1) {
+if ($admin == 1) {
   $data = $query_admin->fetch_object();
-  $_SESSION['id_admin'] = $data->id_admin;
-  $kariyawan = 1;
+
+  $employees = 1;
+  $_SESSION['admin_id'] = $data->id;
+
   header('Location:../admin/dashboard.php');
 } else {
-  $data = $query_kariyawan->fetch_object();
-  $_SESSION['id_kariyawan'] = $data->id_kariyawan;
-  $_SESSION['id_barang'] = array();
-  $_SESSION['jumlah'] = array();
-  $_SESSION['harga'] = array();
+  $data = $query_employees->fetch_object();
+
   $admin = 1;
-  header('Location:../kariyawan/dashboard.php');
+  $_SESSION['employee_id'] = $data->id;
+  $_SESSION['item_id'] = array();
+  $_SESSION['quantity'] = array();
+  $_SESSION['price'] = array();
+
+  header('Location:../employees/dashboard.php');
 }
 
-if ($admin==0) {
+if ($admin == 0) {
   header("Location:../index.php?id=1");
-} elseif ($kariyawan==0) {
+} elseif ($employees == 0) {
   header("Location:../index.php?id=1");
 }
-?>

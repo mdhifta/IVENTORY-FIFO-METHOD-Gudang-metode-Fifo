@@ -1,31 +1,29 @@
 <?php
 include('../database/config.php');
 
-#data
-$id_barang_msk = $_POST['id'];
-$id_barang = $_POST['id_barang'];
-$id_supplier = $_POST['id_supplier'];
-$jumlah = $_POST['jumlah'];
-$harga = $_POST['harga'];
-$jumlah_lama = $_POST['jlama'];
+$item_id = $_POST['item_id'];
+$item_in_id = $_POST['id'];
+$supplier_id = $_POST['supplier_id'];
+$quantity = $_POST['quantity'];
+$price = $_POST['price'];
 
-#seleksi data Barang
-$query = $mysqli->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'");
+$last_stock = $_POST['last_stock'];
+
+$query = $mysqli->query("SELECT * FROM tb_item WHERE id='$item_id'");
 $data = $query->fetch_object();
 
-$jumlah_baru = $data->jumlah-$jumlah_lama;
-#eksekusi
-if($mysqli->query("UPDATE tb_barang_msk SET id_barang='$id_barang', jumlah_masuk='$jumlah', harga='$harga' WHERE id_barang_msk='$id_barang_msk'")) {
-  if ($mysqli->query("UPDATE tb_pembelian SET id_supplier='$id_supplier', jumlah_beli='$jumlah' WHERE id_barang_msk='$id_barang_msk'")) {
-    if ($mysqli->query("UPDATE tb_barang SET jumlah=$jumlah_baru+$jumlah WHERE id_barang='$id_barang'")) {
-      header('Location:../admin/master-pembelian.php');
+$new_quantity = $data->quantity - $last_stock;
+
+if ($mysqli->query("UPDATE tb_item_in SET item_id='$item_id', total_in='$quantity', price='$price' WHERE id='$item_in_id'")) {
+  if ($mysqli->query("UPDATE tb_purchase SET supplier_id='$supplier_id', purchase_total='$quantity' WHERE item_in_id='$item_in_id'")) {
+    if ($mysqli->query("UPDATE tb_item SET quantity=$new_quantity+$quantity WHERE id='$item_id'")) {
+      header('Location:../admin/master-purchase.php');
     } else {
-      echo "error update barang";
+      echo "error update item";
     }
   } else {
-    echo "gagal memasukan data ke tb_pembelian";
+    echo "Failed to insert data tb_purchase";
   }
 } else {
   echo "query error";
 }
-?>

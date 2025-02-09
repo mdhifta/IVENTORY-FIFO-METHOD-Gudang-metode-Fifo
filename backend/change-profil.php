@@ -2,14 +2,13 @@
 session_start();
 include("../database/config.php");
 
-$id_admin = $_SESSION['id_admin'];
-$nama_admin = $_POST['nama'];
+$id = $_SESSION['admin_id'];
+$name = $_POST['name'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-if ($mysqli->query("UPDATE tb_admin SET nama_admin='$nama_admin', username='$username', password='$password' WHERE id_admin='$id_admin'")) {
-  header("Location:../admin/myprofil.php");
+if ($mysqli->query("UPDATE tb_admin SET name='$name', username='$username', password='$password' WHERE id='$id'")) {
+  header("Location:../admin/my-profil.php");
 } else {
   echo "gagal update";
 }
-?>
