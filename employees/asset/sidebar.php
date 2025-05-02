@@ -29,7 +29,7 @@ if ($_SESSION['employee_id'] == '') {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add-selling.php">
+                        <a class="nav-link" href="add-selling.php?deactive_jquery=1">
                             <i class="ni ni-bullet-list-67 text-green"></i>
                             <span class="nav-link-text">Selling</span>
                         </a>

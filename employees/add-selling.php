@@ -146,6 +146,7 @@
         </div>
     </div>
 
+    <?php include("asset/js.php"); ?>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -155,7 +156,6 @@
         });
     </script>
 
-    <!-- <?php include("asset/js.php"); ?> -->
 
 </body>
 
