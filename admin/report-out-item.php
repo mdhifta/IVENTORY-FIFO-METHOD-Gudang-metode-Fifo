@@ -90,7 +90,7 @@
                                             <th scope="row"><?= $data->item_name;  ?></th>
                                             <td><?= $data->total;  ?>/<?= $data->unit_type; ?></td>
                                             <td><?= $data->supplier_name; ?></td>
-                                            <td><?= date("d M Y", strtotime($data->date_out));  ?></td>
+                                            <td><?= date("Y-m-d", strtotime($data->date_out));  ?></td>
                                             <td><?= number_format($data->price);  ?>;-</td>
                                             <td><?= number_format($data->total * 1500);  ?>;-</td>
                                             <td><?= $data->employee_name;  ?></td>

@@ -81,7 +81,7 @@
                                         <tr>
                                             <th scope="row"><?= $data->item_name;  ?></th>
                                             <td><?= $data->total;  ?>/<?= $data->unit_type; ?></td>
-                                            <td><?= date("d M Y", strtotime($data->date_out));  ?></td>
+                                            <td><?= date("Y-m-d", strtotime($data->date_out));  ?></td>
                                             <td>Rp. <?= number_format($data->price);  ?>;-</td>
                                         </tr>
                                     <?php } ?>

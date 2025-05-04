@@ -73,8 +73,8 @@
                                         <tr>
                                             <th scope="row"><?= $data->item_name;  ?></th>
                                             <td><?= $data->quantity;  ?></td>
-                                            <td><?= number_format($data->selling_price); ?>;-</td>
                                             <td><?= number_format($data->purchase_price); ?>;-</td>
+                                            <td><?= number_format($data->selling_price); ?>;-</td>
                                             <td><?= $data->unit_type;  ?></td>
                                         </tr>
                                     <?php } ?>

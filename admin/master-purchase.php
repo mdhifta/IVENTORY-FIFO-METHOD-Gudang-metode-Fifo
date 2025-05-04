@@ -90,7 +90,7 @@
                                             <td><?= $item->history;  ?></td>
                                             <td><?= $item->supplier_name;  ?></td>
                                             <td><?= number_format($item->price); ?>/<?= $item->unit_type; ?></td>
-                                            <td><?= date("d M Y", strtotime($item->date_in));  ?></td>
+                                            <td><?= date("Y-m-d", strtotime($item->date_in));  ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

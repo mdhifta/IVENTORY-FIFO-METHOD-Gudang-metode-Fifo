@@ -38,7 +38,7 @@
         <td><?= $data->history;  ?></td>
         <td><?= $data->supplier_name;  ?></td>
         <td><?= number_format($data->price); ?>/<?= $data->unit_type; ?></td>
-        <td><?= date("d M Y", strtotime($data->purchase_date));  ?></td>
+        <td><?= date("Y-m-d", strtotime($data->purchase_date));  ?></td>
       </tr>
     <?php } ?>
 </table>
