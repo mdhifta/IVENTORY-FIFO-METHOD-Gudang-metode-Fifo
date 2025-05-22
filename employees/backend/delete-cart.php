@@ -10,4 +10,4 @@ if ($_SESSION['quantity'][$row] == 0) {
   unset($_SESSION['price'][$row]);
 }
 
-header('location:../add-selling.php');
+header('location:../add-selling.php?deactive_jquery=1');

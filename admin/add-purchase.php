@@ -126,7 +126,7 @@
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-first-name">Price</label>
                                                     <input type="number" id="input-first-name" name="price"
-                                                        class="form-control" value="<?= $data->price; ?>">
+                                                        class="form-control" value="<?= $data->purchase_price; ?>">
                                                 </div>
                                             </div>
                                         </div>
