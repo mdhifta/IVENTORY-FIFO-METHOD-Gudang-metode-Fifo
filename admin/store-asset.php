@@ -85,12 +85,12 @@
                                             <th scope="row"><?= $no += 1;  ?></th>
                                             <td><?= $data->item_name;  ?></td>
                                             <td><?= $data->total_in; ?>/<?= $data->unit_type; ?></td>
-                                            <td><?= number_format($data->purchase_price); ?>/<?= $data->unit_type; ?></td>
-                                            <td><?= number_format($data->selling_price + 1500); ?>/<?= $data->unit_type; ?></td>
+                                            <td><?= number_format($data->price); ?>/<?= $data->unit_type; ?></td>
+                                            <td><?= number_format($data->price + 1500); ?>/<?= $data->unit_type; ?></td>
                                         </tr>
                                         <?php
-                                        $totalPurchase = $totalPurchase + ($data->purchase_price * $data->total_in);
-                                        $totalSelling = $totalSelling + ($data->selling_price + 1500) * $data->total_in;
+                                        $totalPurchase = $totalPurchase + ($data->price * $data->total_in);
+                                        $totalSelling = $totalSelling + ($data->price + 1500) * $data->total_in;
                                         ?>
                                     <?php } ?>
                                 </tbody>

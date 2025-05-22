@@ -91,8 +91,8 @@
                                             <td><?= $data->total;  ?>/<?= $data->unit_type; ?></td>
                                             <td><?= $data->supplier_name; ?></td>
                                             <td><?= date("Y-m-d", strtotime($data->date_out));  ?></td>
-                                            <td><?= number_format($data->selling_price);  ?>;-</td>
-                                            <td><?= number_format($data->total * $data->selling_price);  ?>;-</td>
+                                            <td><?= number_format($data->price);  ?>;-</td>
+                                            <td><?= number_format($data->total * $data->price);  ?>;-</td>
                                             <td><?= $data->employee_name;  ?></td>
                                         </tr>
                                     <?php } ?>

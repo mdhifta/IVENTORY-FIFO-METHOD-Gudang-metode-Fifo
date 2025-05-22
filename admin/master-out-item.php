@@ -85,7 +85,7 @@
                                             <td><?= $data->total_in;  ?></td>
                                             <td><?= $data->history;  ?></td>
                                             <td><?= $data->supplier_name;  ?></td>
-                                            <td>Rp.<?= number_format($data->purchase_price); ?>/<?= $data->unit_type; ?></td>
+                                            <td>Rp.<?= number_format($data->price); ?>/<?= $data->unit_type; ?></td>
                                             <td><?= date("Y-m-d", strtotime($data->date_in));  ?></td>
                                             <td>
                                                 <span class="badge bg-success text-white">ALL ITEM ALREADY OUT</span>
