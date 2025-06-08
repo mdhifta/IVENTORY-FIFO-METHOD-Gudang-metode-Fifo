@@ -22,7 +22,7 @@ foreach ($_SESSION['item_id'] as $row => $item_id) {
   }
 
   for ($j = 1; $j <= $i; $j++) {
-    $item_in = $mysqli->query("SELECT tbii.total_in as total_in, tbii.purchase_price as price 
+    $item_in = $mysqli->query("SELECT tbii.total_in as total_in, tbii.price as price 
     FROM tb_item_in as tbii 
     JOIN tb_purchase as tbp ON tbp.item_in_id=tbii.id 
     WHERE tbii.id=$data_id[$j]");
