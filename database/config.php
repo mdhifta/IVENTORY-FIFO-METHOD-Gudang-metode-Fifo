@@ -1,10 +1,10 @@
 <?php
 ini_set('display_errors', 1);
 
-$host = "localhost";
-$username = "mdhifta";
-$password = "shoera";
-$db_name = "db_en_fifo";
+$host = "69.10.40.66 ";
+$username = "digisoft_master";
+$password = "uDa9,SuCu&j+";
+$db_name = "digisoft_fifo_en";
 
 $mysqli = new mysqli($host, $username, $password, $db_name);
 

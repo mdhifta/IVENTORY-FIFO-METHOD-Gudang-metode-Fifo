@@ -56,7 +56,7 @@ if (@$_SESSION['quantity'][$row] >= $data->quantity) {
     } else {
       array_push($_SESSION['item_id'], $item_id);
       array_push($_SESSION['quantity'], $quantity);
-      array_push($_SESSION['price'], $data->selling_price);
+      array_push($_SESSION['price'], $data->price + 1500);
       header('location:../add-selling.php?deactive_jquery=1');
     }
   }
